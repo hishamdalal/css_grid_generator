@@ -1,0 +1,206 @@
+header {
+    text-align: center;
+    background: #0a92bb;
+    color: #fff;
+    padding: 1em 0;
+}
+
+#container {
+    display: grid;
+		grid-template-columns: 1fr 4fr;
+    grid-template-rows: 100px 2fr 1fr 50px;
+    grid-template-areas: 
+        "header header"
+        "form items"
+        "code preview"
+        "footer footer";
+		grid-gap: 5px;
+}
+#grid_layout {
+    grid-area: items;
+}
+
+#code-container {
+    grid-area: code;
+}
+#grid_layout {
+    grid-area: items;
+}
+#preview {
+    grid-area: preview;
+		
+		display: grid;
+    grid-template-rows: 30px auto;	
+    grid-gap: 5px;		
+}
+#preview h4 {
+    text-align: center;
+    padding: .4em;
+    background: red;
+    color: #fff;
+    margin: 0;
+}
+header {
+	grid-area: header;
+}
+footer {
+	grid-area: footer;
+}
+
+#container > div {
+    background: #f3f3f3;
+}
+
+
+
+
+textarea {
+    font-family: monospace, sans-serif;
+    font-size: .8em;
+    width: 98%;
+    height: 98%;
+}
+/*
+#form div {
+     position: relative; 
+}
+*/
+
+div#form {
+    grid-area: form;
+    background: #eff19e;
+		border: 1px solid #acae68;
+    font-family: tahoma;
+    font-size: .8em;    
+}
+
+#form > div {
+    border: 1px solid #fff;
+    margin: 6px;
+}}
+#form > div > div {
+    border: none;
+}
+#form h3 {
+    margin: 0;
+    font-size: 1em;
+    margin-bottom: 5px;
+}
+
+#form p {
+    display: none;
+    position: fixed;
+    bottom: 0px;
+    left: 10px;
+    padding: 5px;
+    background: yellow;
+    border: 1px solid #ccc;
+}
+
+#form h3 > span {
+    display: inline-block;
+}
+
+#form h3 + p {
+    z-index: 99999999;
+}
+
+#form h3:hover + p {
+    display: block;
+}
+
+#form input[type=number] {
+    width: 50px;
+}
+
+#grid_layout div {
+    border: 1px solid blue;
+	padding: 4px;
+}
+
+span.del {
+    padding: 4px;
+    color: red;
+    cursor: pointer;
+}
+
+.item {
+    position: relative;
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-rows: 30px 1fr;    
+}
+
+.item > span {
+    content: 'x';
+    display: block;
+    position: absolute;
+    right: 7px;
+    top: 0;
+    color: red;
+    cursor: pointer;
+}
+
+input.item-name {
+    width: 90%;
+}
+
+
+.item > label {
+    display: inline;
+    position: absolute;
+    align-self: center;
+    align-content: center;
+    justify-self: center;
+    font-size: 1.2em;
+}
+
+#error {
+    background-color: yellow;
+    color: red;
+    font-family: tahoma;
+    padding: .2em;
+    text-align: center;
+}
+
+.btn-error {
+    border-style: outset;
+    background-color: yellow;
+    color: red;
+}
+
+
+
+#output div {
+    border: 1px solid red;
+		font-family: monospace;
+    font-size: 1.2em;	
+		padding: 4px;
+}
+
+footer {
+	background: #3fcbf5;
+    background: #0a92bb;
+    text-align: center;
+    color: #fff;
+    font-family: monospace;
+    font-size: 1.3em;
+    text-shadow: 1px 1px 1px black;
+    font-weight: 700;
+}
+
+@media screen and (max-width:400px){
+#container {
+    display: grid;
+		grid-template-columns: 1fr;
+    grid-template-rows: 100px 2fr 2fr 1fr 1fr 50px;
+    grid-template-areas: 
+        "header"
+				"form"
+				"items"
+				"preview"
+        "code"
+        "footer";
+		grid-gap: 5px;
+}	
+}
